@@ -32,7 +32,7 @@ export default function Home({ nat }) {
           setPage((next) => next + 1);
         }
       },
-      { rootMargin: "900px" }
+      { rootMargin: "2000px" }
     );
     if (ref) {
       observer.observe(ref);

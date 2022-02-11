@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { BiArrowBack } from "react-icons/bi";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
+import { list } from "../constants/const";
 
 const Container = styled("div")({
   display: "flex",
@@ -12,8 +13,7 @@ const Container = styled("div")({
   padding: "10px 20px",
 });
 
-function SettingPage({ setNat, nat }) {
-  let list = ["CH", "ES", "FR", "GB"];
+function SettingPage({ setNationality, nat }) {
   return (
     <div
       style={{
@@ -33,7 +33,7 @@ function SettingPage({ setNat, nat }) {
         </Link>
       </Container>
 
-      <DropDown list={list} setNat={setNat} nat={nat} />
+      <DropDown list={list} setNationality={setNationality} nat={nat} />
     </div>
   );
 }

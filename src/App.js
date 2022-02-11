@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [nat, setNat] = useState("CH");
+  const setNationality = (value) => {
+    setNat(value);
+  };
   return (
     <div className="App">
       <Router>
@@ -19,7 +22,7 @@ function App() {
           <Route
             exact
             path="/setting"
-            element={<SettingPage setNat={setNat} nat={nat} />}
+            element={<SettingPage setNationality={setNationality} nat={nat} />}
           />
         </Routes>
       </Router>

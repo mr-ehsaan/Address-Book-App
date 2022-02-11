@@ -25,11 +25,11 @@ const Option = styled("option")({
   color: "black",
 });
 
-function DropDown({ list, setNat, nat }) {
+function DropDown({ list, setNationality, nat }) {
   return (
     <Container>
       <label for="cars">Select Nationality:</label>
-      <Selectoption onChange={(event) => setNat(event.target.value)}>
+      <Selectoption onChange={(event) => setNationality(event.target.value)}>
         {list
           ? list.map((li, index) => {
               return (
