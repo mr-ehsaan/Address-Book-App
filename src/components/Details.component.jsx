@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 const Details = ({ singleUser }) => {
   return (
     <Table sx={{ minWidth: 650 }} aria-label="caption table">
-      <caption>A basic table example with a caption</caption>
+      <caption>Address Book App</caption>
       <TableHead>
         <TableRow>
           <TableCell>Street</TableCell>

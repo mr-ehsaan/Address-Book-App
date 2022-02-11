@@ -12,7 +12,7 @@ const User = ({ users, search, displayDetails }) => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="caption table">
-        <caption>A basic table example with a caption</caption>
+        <caption>Address Book App</caption>
         <TableHead>
           <TableRow>
             <TableCell>Thumbnail</TableCell>
