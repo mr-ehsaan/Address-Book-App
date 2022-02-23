@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "webpack": "webpack",
     "start": "webpack server",
     "test": "jest --watchAll",
     "test:watch": "npm run test -- --watch"
@@ -12,13 +13,10 @@
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/src/assets/stylesheets/",
-      "\\.(gif)$": "<rootDir>/src/assets/icons/loading.gif"
+      "\\.less$": "<rootDir>/src/assets/stylesheets/"
     },
     "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/legacy_notes_and_workbook/",
-      "<rootDir>/src/assets/stylesheets/"
+      "<rootDir>/node_modules/"
     ]
   },
   "keywords": [],
@@ -48,7 +46,6 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "antd": "^4.18.8",
     "axios": "^0.26.0",
