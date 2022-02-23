@@ -2,7 +2,7 @@ import React from "react";
 
 import { Table } from "antd";
 
-const Details = ({ singleUser }) => {
+const Details = ({ userDetails }) => {
   const columns = [
     {
       title: "Street",
@@ -40,7 +40,9 @@ const Details = ({ singleUser }) => {
     },
   ];
   console.log("Single user in Details > ", singleUser);
-  return <Table dataSource={singleUser} columns={columns} pagination={false} />;
+  return (
+    <Table dataSource={userDetails} columns={columns} pagination={false} />
+  );
 };
 
 export default Details;

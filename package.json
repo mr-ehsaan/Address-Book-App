@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack",
     "start": "webpack server",
     "test": "jest --watchAll",
     "test:watch": "npm run test -- --watch"

@@ -14,26 +14,16 @@ import {
 
 function HomeContainer() {
   const dispatch = useDispatch();
-
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
   const handleClose = () => setOpen(false);
-  // const [isLoading, setIsLoading] = useState(true);
-
   const [observe, setObserve] = useState(null);
-  const users = useSelector((state) => state.userData.users);
-  const apiCall = useSelector((state) => state);
 
-  const page = useSelector((state) => state.userData.pagination.currentPage);
-  const perPage = useSelector((state) => state.userData.pagination.perPage);
-  const nat = useSelector((state) => state.userData.nat);
-  const search = useSelector((state) => state.userData.search);
-  const singleUser = useSelector((state) => state.userData.userDetails);
-  const isLoading = useSelector((state) => state.userData.isLoading);
+  const userState = useSelector((state) => state.userData);
+  const pagination = useSelector((state) => state.userData.pagination);
 
-  useEffect(() => {
-    console.log("IsLoading  > ", isLoading);
-  }, [isLoading]);
+  const { page, perPage } = pagination;
+  const { users, nat, search, userDetails, isLoading } = userState;
 
   useEffect(() => {
     if (users && search) {
@@ -86,11 +76,6 @@ function HomeContainer() {
   }, [search, users]);
 
   useEffect(() => {
-    console.log("Users in Redux>>", users, " and apiCall > ", apiCall);
-    console.log("Page No. inside HomeContainer > ", page, " Nat > ", nat);
-  }, [users, apiCall]);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entery]) => {
         if (entery.isIntersecting && page <= 20) {
@@ -125,7 +110,7 @@ function HomeContainer() {
 
       <User data={data} />
 
-      <Popup singleUser={singleUser} open={open} handleClose={handleClose} />
+      <Popup userDetails={userDetails} open={open} handleClose={handleClose} />
 
       <Footer
         count={users.length}

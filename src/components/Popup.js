@@ -2,7 +2,7 @@ import React from "react";
 import { Modal } from "antd";
 import Details from "./UserDetails";
 
-export default function Popup({ singleUser, open, handleClose }) {
+export default function Popup({ userDetails, open, handleClose }) {
   return (
     <Modal
       title="Basic Modal"
@@ -11,7 +11,7 @@ export default function Popup({ singleUser, open, handleClose }) {
       onCancel={handleClose}
       width="fit-to-content"
     >
-      <Details singleUser={singleUser} />
+      <Details userDetails={userDetails} />
     </Modal>
   );
 }

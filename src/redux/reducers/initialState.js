@@ -3,7 +3,7 @@ export default {
   cache: [],
   nat: "CH",
   pagination: {
-    currentPage: 1,
+    page: 1,
     perPage: 50,
   },
   userDetails: {},
