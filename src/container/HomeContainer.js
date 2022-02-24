@@ -76,10 +76,6 @@ function HomeContainer() {
   }, [search, users]);
 
   useEffect(() => {
-    console.log("User State > ", userState);
-  }, [userState]);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entery]) => {
         if (entery.isIntersecting && page <= 20) {
