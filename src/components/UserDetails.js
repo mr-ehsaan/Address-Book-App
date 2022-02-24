@@ -39,7 +39,6 @@ const Details = ({ userDetails }) => {
       fixed: "right",
     },
   ];
-  console.log("Single user in Details > ", singleUser);
   return (
     <Table dataSource={userDetails} columns={columns} pagination={false} />
   );

@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://randomuser.me/api/";
+const basUrl = process.env.BASE_URL;
 
 import { toast } from "react-toastify";
 axios.interceptors.response.use((response) => {
@@ -13,21 +13,20 @@ axios.interceptors.response.use((response) => {
 });
 
 export async function Get(url) {
-  let res = await axios.get(`${url}`);
-  //   console.log("Dasta in Generic > ", res.data);
+  let res = await axios.get(`${basUrl}${url}`);
   return res;
 }
 
 export async function Post(url, data) {
-  let res = axios.post(`${url}`, data);
+  let res = axios.post(`${basUrl}${url}`, data);
   return res;
 }
 
 export function Delete(url) {
-  let res = axios.delete(`${url}`);
+  let res = axios.delete(`${basUrl}${url}`);
   return res;
 }
 export function put(url, data) {
-  let res = axios.put(`${url}`, data);
+  let res = axios.put(`${basUrl}${url}`, data);
   return res;
 }

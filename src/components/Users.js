@@ -3,7 +3,6 @@ import React from "react";
 import { Table } from "antd";
 
 const User = ({ data }) => {
-  console.log("Data of users > ", data);
   const columns = [
     {
       title: "Thumbnail",
