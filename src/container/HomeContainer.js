@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import User from "../components/Users";
 import Header from "../common/Header";
-import Footer from "../components/Footer";
+import Footer from "../common/Footer";
 import Popup from "../components/Popup";
 import { Button } from "antd";
 import { useSelector, useDispatch } from "react-redux";
@@ -74,6 +74,10 @@ function HomeContainer() {
       setData(sourceData);
     }
   }, [search, users]);
+
+  useEffect(() => {
+    console.log("User State > ", userState);
+  }, [userState]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

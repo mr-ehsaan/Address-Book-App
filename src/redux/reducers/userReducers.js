@@ -46,7 +46,7 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         pagination: {
-          currentPage: state.pagination.page + 1,
+          page: state.pagination.page + 1,
           perPage: state.pagination.perPage,
         },
       };
