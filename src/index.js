@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.less";
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import "./assets/styleSheets/index.less";
 import App from "./App";
 import { Provider as ReduxProvider } from "react-redux";
