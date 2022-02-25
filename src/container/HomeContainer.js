@@ -79,7 +79,6 @@ function HomeContainer() {
     const observer = new IntersectionObserver(
       ([entery]) => {
         if (entery.isIntersecting && page <= 20) {
-          console.log("Dispatch pass > ");
           dispatch(loadUsers(page, perPage, nat));
         }
       },
