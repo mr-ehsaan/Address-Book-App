@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import User from "../components/Users";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import Popup from "../components/Popup";
+import User from "../components/Users.jsx";
+import Header from "../common/Header.jsx";
+import Footer from "../common/Footer.jsx";
+import Popup from "../components/Popup.jsx";
 import { Button } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -11,6 +11,7 @@ import {
   setUserDetails,
   setUserSearch,
 } from "../redux/actions/userActions";
+import ErrorBoundary from "../common/ErrorBoundary.jsx";
 
 function HomeContainer() {
   const dispatch = useDispatch();
@@ -105,17 +106,26 @@ function HomeContainer() {
 
   return (
     <>
-      <Header pageType={"home"} userSearch={userSearch} search={search} />
-
-      <User data={data} />
-
-      <Popup userDetails={userDetails} open={open} handleClose={handleClose} />
-
-      <Footer
-        count={users.length}
-        isLoading={isLoading}
-        setObserve={setObserve}
-      />
+      <ErrorBoundary>
+        <Header pageType={"home"} userSearch={userSearch} search={search} />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <User data={data} />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Popup
+          userDetails={userDetails}
+          open={open}
+          handleClose={handleClose}
+        />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Footer
+          count={users.length}
+          isLoading={isLoading}
+          setObserve={setObserve}
+        />
+      </ErrorBoundary>
     </>
   );
 }

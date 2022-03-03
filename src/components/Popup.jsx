@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "antd";
-import Details from "./UserDetails";
+import Details from "./UserDetails.jsx";
 
 export default function Popup({ userDetails, open, handleClose }) {
   return (

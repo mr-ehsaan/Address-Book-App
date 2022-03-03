@@ -1,8 +1,9 @@
 import React from "react";
-import DropDown from "../components/DropDown";
-import Header from "../common/Header";
+import DropDown from "../components/DropDown.jsx";
+import Header from "../common/Header.jsx";
 import { setNationality } from "../redux/actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
+import ErrorBoundary from "../common/ErrorBoundary.jsx";
 
 function SettingContainer() {
   const nat = useSelector((state) => state.userData.nat);
@@ -19,8 +20,12 @@ function SettingContainer() {
         alignItems: "space-between",
       }}
     >
-      <Header pageType="setting" />
-      <DropDown changeNat={changeNat} nat={nat} />
+      <ErrorBoundary>
+        <Header pageType="setting" />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <DropDown changeNat={changeNat} nat={nat} />
+      </ErrorBoundary>
     </div>
   );
 }

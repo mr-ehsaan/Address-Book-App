@@ -9,7 +9,6 @@ export default function Header({ pageType, userSearch, search }) {
       <div className="homeHeader">
         <div className="heading">
           <h3>Address Book App </h3>
-
           <Link to={"/setting"} style={{ textDecoration: "none" }}>
             <Button variant="outlined">Setting</Button>
           </Link>

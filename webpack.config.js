@@ -7,7 +7,7 @@ module.exports = {
   output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
   mode: process.env.NODE_ENV || "development",
   resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
-  devServer: { open: true, port: 3000 },
+  devServer: { open: true, port: 3000, historyApiFallback: true },
   module: {
     rules: [
       {
