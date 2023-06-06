@@ -7,3 +7,6 @@ phase:
   build: 
     commands:
       -npm run build
+  post_build:
+    commands:
+      - aws s3 cp --recursive ./build s3://www.oncloudconsulting/
